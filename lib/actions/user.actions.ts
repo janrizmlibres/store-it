@@ -117,7 +117,7 @@ export const getCurrentUser = async () => {
 };
 
 export const signOutUser = async () => {
-  const { account } = await createSessionClient();
+  const { account } = (await createSessionClient())!;
 
   try {
     await account.deleteSession("current");
