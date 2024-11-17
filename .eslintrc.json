@@ -1,3 +1,52 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript",
+    "standard", // From eslint-config-standard
+    "plugin:tailwindcss/recommended", // From eslint-plugin-tailwindcss
+    "prettier" // From eslint-config-prettier
+  ],
+  "plugins": [
+    "import" // From eslint-plugin-import
+  ],
+  "rules": {
+    "import/order": [
+      // Set order of imports needed by eslint-plugin-import
+      "error",
+      {
+        "groups": [
+          "builtin", // Built-in types are first
+          "external", // External libraries
+          "internal", // Internal modules
+          ["parent", "sibling"], // Parent and sibling types can be mingled together
+          "index", // Then the index file
+          "object" // Object imports
+        ],
+        "newlines-between": "always",
+        "pathGroups": [
+          {
+            "pattern": "@app/**",
+            "group": "external",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
+  },
+  "ignorePatterns": [
+    "components/ui/**" // Ignore Shadcn components
+  ],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "no-undef": "off" // Prevents linting issues
+      }
+    }
+  ]
 }
