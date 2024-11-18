@@ -191,7 +191,7 @@ export const deleteFile = async ({
 
 export async function getTotalSpaceUsed() {
   try {
-    const { databases } = (await createSessionClient())!;
+    const { databases } = await createSessionClient();
     const currentUser = await getCurrentUser();
     if (!currentUser) throw new Error("User is not authenticated.");
 
