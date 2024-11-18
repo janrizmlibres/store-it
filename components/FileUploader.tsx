@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { MouseEvent, useCallback, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 
 import { MAX_FILE_SIZE } from "@/constants";
@@ -58,12 +58,13 @@ const FileUploader = ({ ownerId, accountId, className }: Props) => {
 
       await Promise.all(uploadPromises);
     },
-    [accountId, ownerId, path, toast]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [accountId, ownerId, path]
   );
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
   const handleRemoveFile = (
-    e: MouseEvent<HTMLImageElement>,
+    e: React.MouseEvent<HTMLImageElement, MouseEvent>,
     fileName: string
   ) => {
     e.stopPropagation();
@@ -108,6 +109,7 @@ const FileUploader = ({ ownerId, accountId, className }: Props) => {
                       width={80}
                       height={26}
                       alt="Loader"
+                      unoptimized
                     />
                   </div>
                 </div>
