@@ -83,6 +83,8 @@ export const verifySecret = async ({
 
     const session = await account.createSession(accountId, password);
 
+    console.log(session);
+
     (await cookies()).set("appwrite-session", session.secret, {
       path: "/",
       httpOnly: true,
@@ -90,7 +92,7 @@ export const verifySecret = async ({
       secure: true,
     });
 
-    return parseStringify({ seessionId: session.$id });
+    return parseStringify({ sessionId: session.$id });
   } catch (error) {
     handleError(error, "Failed to verify OTP");
   }
