@@ -35,7 +35,7 @@ Welcome to my project! Here, I'll provide you with a brief overview of what insp
     - [⚒️ How to Contribute](#️-how-to-contribute)
     - [📩 Bug Report](#-bug-report)
   - [📜 Credits](#-credits)
-  - [� Contact Me](#-contact-me)
+  - [📞 Contact Me](#-contact-me)
   - [📋 License](#-license)
 
 ## ✨ Features
@@ -68,7 +68,7 @@ To get this project up and running in your development environment, follow these
 
 We need to install or make sure that these tools are pre-installed on your machine:
 
-- [NodeJS](https://nodejs.org/en/download/): It is a JavaScript runtime build.
+- [NodeJS](https://nodejs.org/en): It is a JavaScript runtime build.
 - [Git](https://git-scm.com/downloads): It is an open source version control system.
 
 ### 🚀 Install Project
@@ -121,7 +121,7 @@ To fix a bug or enhance an existing module, follow these steps:
 
 ### 📩 Bug Report
 
-If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an issue [here](https://github.com/username/projectname/issues/new) by including your search query and the expected result.
+If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an issue [here](https://github.com/janrizmlibres/store-it/issues/new) by including your search query and the expected result.
 
 ## 📜 Credits
 
